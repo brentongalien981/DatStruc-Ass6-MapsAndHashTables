@@ -10,6 +10,7 @@ public class ContainsKeyImplementation {
 
 		System.out.println("Exercise2: Implementing containsKey() method.\n");
 
+		// Set myMap.
 		SortedTableMap<Integer, Integer> myMap = new SortedTableMap<>();
 		myMap.put(9, null);
 		myMap.put(8, 8);
@@ -18,6 +19,8 @@ public class ContainsKeyImplementation {
 		myMap.put(0, null);
 		myMap.put(5, 5);
 
+		
+		// Dispaly myMap's entries.
 		System.out.println("myMap values:");
 		for (Entry<Integer, Integer> e : myMap.entrySet()) {
 			System.out.println(e.getKey() + " ==> " + e.getValue());			
@@ -25,6 +28,8 @@ public class ContainsKeyImplementation {
 		
 		System.out.println("");
 		
+		
+		// Display keys and indeces of myMap.
 		System.out.println("myMap.findIndex(KEY) ==> INDEX");
 		System.out.println("myMap.findIndex(-9) ==> " + myMap.findIndex(-9));
 		System.out.println("myMap.findIndex(-1) ==> " + myMap.findIndex(-1));
@@ -39,6 +44,8 @@ public class ContainsKeyImplementation {
 		System.out.println("myMap.findIndex(999) ==> " + myMap.findIndex(999));		
 		System.out.println("");
 		
+		
+		// Demo containKey() method.
 		System.out.println("myMap.containKey(-9) ==> " + myMap.containKey(-9));
 		System.out.println("myMap.containKey(0) ==> " + myMap.containKey(0));
 		System.out.println("myMap.containKey(7) ==> " + myMap.containKey(7));
