@@ -28,13 +28,35 @@ public class SortedTableMap<K, V> extends AbstractSortedMap<K, V> {
 			return findIndex(key, mid + 1, high); // answer is right of mid
 	}
 
-	private int findIndex(K key) {
+	public int findIndex(K key) {
 		return findIndex(key, 0, table.size() - 1);
 	}
 
 	public boolean containKey(K key) {
-		// use findIndex method to check for the key in your map
-		return true;
+
+		int index = findIndex(key);
+
+		if (index == 0) {
+			// Evaluate further, because non-existing keys and
+			// a key of zero both give index of zero.
+
+			// 0th entry.
+			Entry<K, V> zerothEntry = table.get(0);
+
+			// If the "key" and the 0th-entry's key are the same.
+			if (key.equals(zerothEntry.getKey())) {
+				return true;
+			}
+
+			return false;
+		} else if (index < table.size()) {
+			// For indeces 1 to table-size - 1
+			return true;
+		}
+
+		// The findIndex() method returns an int that is equal to
+		// table-size if the key does not exist.
+		return false;
 	}
 
 	@Override
